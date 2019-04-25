@@ -23,7 +23,7 @@ public class Movie {
     @Column(name = "movie_cl_runtime")
     private int runtime;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="movie_has_people", joinColumns=
             {@JoinColumn(name="movie_id")}, inverseJoinColumns=
             {@JoinColumn(name="person_id")})
