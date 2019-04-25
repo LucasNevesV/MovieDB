@@ -31,7 +31,7 @@ public class PersonController {
 
     @Transactional(rollbackFor = Exception.class)
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createBook(@Valid @RequestBody Person person){
+    public ResponseEntity<?> createPerson(@Valid @RequestBody Person person){
         this.personRepository.save(person);
         return new ResponseEntity<>(person,HttpStatus.CREATED);
     }

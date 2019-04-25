@@ -31,7 +31,7 @@ public class MovieController {
 
     @Transactional(rollbackFor = Exception.class)
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createBook(@Valid @RequestBody Movie movie){
+    public ResponseEntity<?> createMovie(@Valid @RequestBody Movie movie){
         this.movieRepository.save(movie);
         return new ResponseEntity<>(movie,HttpStatus.CREATED);
     }
