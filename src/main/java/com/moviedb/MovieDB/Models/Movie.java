@@ -1,8 +1,10 @@
 package com.moviedb.MovieDB.Models;
 
-import javax.persistence.*;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import javax.persistence.*;
+
+// @Data LOMBOCK
 @Entity
 @Table(name = "tb_movie")
 public class Movie {
@@ -23,12 +25,21 @@ public class Movie {
     @Column(name = "movie_cl_runtime")
     private int runtime;
 
+    @Column(name = "movie_cl_language")
+    private int language;
+
     //Lazy collection
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name="movie_has_people", joinColumns=
+    @JsonIgnore
+    @OneToOne()
+    private MoviePerson moviePerson;
+
+    @ManyToMany(fetch = FetchType.LAZY,  cascade =
+            {CascadeType.PERSIST, CascadeType.MERGE
+            })
+    @JoinTable(name="movie_has_genres", joinColumns=
             {@JoinColumn(name="movie_id")}, inverseJoinColumns=
-            {@JoinColumn(name="person_id")})
-    private List<Person> cast;
+            {@JoinColumn(name="genres_id")})
+    private Genres genres;
 
     @Override
     public boolean equals(Object o) {
@@ -85,12 +96,28 @@ public class Movie {
         this.runtime = runtime;
     }
 
-    public List<Person> getCast() {
-        return cast;
+    public MoviePerson getMoviePerson() {
+        return moviePerson;
     }
 
-    public void setCast(List<Person> cast) {
-        this.cast = cast;
+    public void setMoviePerson(MoviePerson moviePerson) {
+        this.moviePerson = moviePerson;
+    }
+
+    public Genres getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Genres genres) {
+        this.genres = genres;
+    }
+
+    public int getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(int language) {
+        this.language = language;
     }
 
     //Lingua

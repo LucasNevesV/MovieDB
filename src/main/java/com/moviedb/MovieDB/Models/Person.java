@@ -1,7 +1,10 @@
 package com.moviedb.MovieDB.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
+
 
 @Entity
 @Table(name = "tb_person")
@@ -17,8 +20,13 @@ public class Person {
     @Column(name = "person_cl_origin")
     private String origin;
 
-    @ManyToMany(mappedBy = "cast", fetch = FetchType.EAGER)
-    private List<Movie> movies;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "people", fetch = FetchType.LAZY)
+    private Set<MoviePerson> moviePersonList ;
+
+    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    @JoinColumn(name = "gender_id")
+    private Gender gender;
 
     @Override
     public boolean equals(Object o) {
@@ -59,11 +67,19 @@ public class Person {
         this.origin = origin;
     }
 
-    public List<Movie> getMovies() {
-        return movies;
+    public Set<MoviePerson> getMoviePersonList() {
+        return moviePersonList;
     }
 
-    public void setMovies(List<Movie> movies) {
-        this.movies = movies;
+    public void setMoviePersonList(Set<MoviePerson> moviePersonList) {
+        this.moviePersonList = moviePersonList;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

@@ -1,7 +1,6 @@
 package com.moviedb.MovieDB.Controllers;
 
 import com.moviedb.MovieDB.Models.Person;
-import com.moviedb.MovieDB.Repositories.MovieRepository;
 import com.moviedb.MovieDB.Repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
