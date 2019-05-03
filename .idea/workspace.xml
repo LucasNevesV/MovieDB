@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae683849-e2db-431a-8739-d10180902761" name="Default Changelist" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/GenreRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMovieMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CastCreditsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CreditsDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Genres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Genres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/MoviePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/MoviePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +26,68 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MovieController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="221">
+              <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CreditsDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
+                <element signature="e#202#203#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+                <element signature="e#309#310#0" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CastCreditsDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#140#141#0" expanded="true" />
+                <element signature="e#165#166#0" expanded="true" />
+                <element signature="e#199#200#0" expanded="true" />
+                <element signature="e#227#228#0" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#325#326#0" expanded="true" />
+                <element signature="e#357#358#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/MovieDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,84 +98,100 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="23" column="53" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="53" />
+            <state relative-caret-position="196">
+              <caret line="146" column="33" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#addMovies#0;class#MovieFactory#0" />
+                <element signature="e#1072#1080#0" expanded="true" />
                 <element signature="method#addGenres#0;class#MovieFactory#0" />
-                <element signature="e#3923#3924#0" expanded="true" />
-                <element signature="e#3952#3953#0" expanded="true" />
-                <element signature="e#4001#4002#0" expanded="true" />
-                <element signature="e#4037#4038#0" expanded="true" />
-                <element signature="e#4076#4077#0" expanded="true" />
-                <element signature="e#4105#4106#0" expanded="true" />
-                <element signature="e#4155#4156#0" expanded="true" />
-                <element signature="e#4191#4192#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/MoviePerson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenreController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#402#403#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Genres.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1290#1291#0" expanded="true" />
-                <element signature="e#1317#1318#0" expanded="true" />
+                <element signature="e#7038#7039#0" expanded="true" />
+                <element signature="e#7067#7068#0" expanded="true" />
+                <element signature="e#7116#7117#0" expanded="true" />
+                <element signature="e#7152#7153#0" expanded="true" />
+                <element signature="e#7191#7192#0" expanded="true" />
+                <element signature="e#7220#7221#0" expanded="true" />
+                <element signature="e#7270#7271#0" expanded="true" />
+                <element signature="e#7306#7307#0" expanded="true" />
+                <element signature="e#7359#7360#0" expanded="true" />
+                <element signature="e#7397#7398#0" expanded="true" />
+                <element signature="e#7470#7471#0" expanded="true" />
+                <element signature="e#7524#7525#0" expanded="true" />
+                <element signature="e#7563#7564#0" expanded="true" />
+                <element signature="e#7592#7593#0" expanded="true" />
+                <element signature="e#7642#7643#0" expanded="true" />
+                <element signature="e#7678#7679#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Movie.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="315">
+              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1241">
+              <caret line="91" column="7" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1272#1273#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#1352#1353#0" expanded="true" />
+                <element signature="e#1377#1378#0" expanded="true" />
+                <element signature="e#1411#1412#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1470#1471#0" expanded="true" />
+                <element signature="e#1497#1498#0" expanded="true" />
+                <element signature="e#1537#1538#0" expanded="true" />
+                <element signature="e#1569#1570#0" expanded="true" />
+                <element signature="e#1610#1611#0" expanded="true" />
+                <element signature="e#1647#1648#0" expanded="true" />
+                <element signature="e#1707#1708#0" expanded="true" />
+                <element signature="e#1759#1760#0" expanded="true" />
+                <element signature="e#1811#1812#0" expanded="true" />
+                <element signature="e#1849#1850#0" expanded="true" />
+                <element signature="e#1921#1922#0" expanded="true" />
+                <element signature="e#1975#1976#0" expanded="true" />
+                <element signature="e#2157#2158#0" expanded="true" />
+                <element signature="e#2189#2190#0" expanded="true" />
+                <element signature="e#2239#2240#0" expanded="true" />
+                <element signature="e#2281#2282#0" expanded="true" />
+                <element signature="e#2316#2317#0" expanded="true" />
+                <element signature="e#2347#2348#0" expanded="true" />
+                <element signature="e#2395#2396#0" expanded="true" />
+                <element signature="e#2435#2436#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#935#936#0" expanded="true" />
+                <element signature="e#988#989#0" expanded="true" />
+                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#1040#1041#0" expanded="true" />
+                <element signature="e#1074#1075#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1135#1136#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
+                <element signature="e#1208#1209#0" expanded="true" />
+                <element signature="e#1244#1245#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,28 +218,30 @@
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/MovieRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/MoviePersonRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/MovieDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/RoleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/GenderRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/MoviePerson.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/PersonRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TvSeries.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/GenreRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TV.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MovieController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMovieMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Genres.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TV.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Movie.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/MoviePerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CreditsDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CastCreditsDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java" />
       </list>
     </option>
   </component>
@@ -177,8 +255,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1218" />
+    <option name="width" value="1940" />
+    <option name="height" value="1220" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -186,6 +264,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,6 +323,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="MovieDB" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="DTOs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MovieDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MovieDB" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="MovieDB" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,11 +353,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556652673995" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556911716485" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -325,10 +413,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1216" extended-state="6" />
+    <frame x="-6" y="-6" width="1719" height="972" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26972282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2730006" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -337,12 +425,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977462" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32779318" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32740214" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39981532" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32977462" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32858837" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32977462" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32858837" />
@@ -458,16 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/MoviePersonRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -478,30 +556,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Repositories/PersonRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -535,60 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" column="60" lean-forward="true" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1184#1185#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1351#1352#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-            <element signature="e#1411#1412#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1487#1488#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1601#1602#0" expanded="true" />
-            <element signature="e#1641#1642#0" expanded="true" />
-            <element signature="e#1674#1675#0" expanded="true" />
-            <element signature="e#1703#1704#0" expanded="true" />
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1815#1816#0" expanded="true" />
-            <element signature="e#1846#1847#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
-            <element signature="e#1931#1932#0" expanded="true" />
-            <element signature="e#1962#1963#0" expanded="true" />
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2029#2030#0" expanded="true" />
-            <element signature="e#2061#2062#0" expanded="true" />
-            <element signature="e#2092#2093#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
-            <element signature="e#2165#2166#0" expanded="true" />
-            <element signature="e#2203#2204#0" expanded="true" />
-            <element signature="e#2268#2269#0" expanded="true" />
-            <element signature="e#2297#2298#0" expanded="true" />
-            <element signature="e#2346#2347#0" expanded="true" />
-            <element signature="e#2382#2383#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -616,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/MovieDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMovieMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -632,7 +629,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/GenreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="187">
           <caret line="26" column="58" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -642,7 +639,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/PopularMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="221">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -652,62 +649,198 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Genres.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/TV.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        <state relative-caret-position="374">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1317#1318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MovieController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1703#1704#0" expanded="true" />
+            <element signature="e#1732#1733#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/MoviePerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+        <state relative-caret-position="170">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Genres.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="53" />
+        <state relative-caret-position="51">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addMovies#0;class#MovieFactory#0" />
-            <element signature="method#addGenres#0;class#MovieFactory#0" />
-            <element signature="e#3923#3924#0" expanded="true" />
-            <element signature="e#3952#3953#0" expanded="true" />
-            <element signature="e#4001#4002#0" expanded="true" />
-            <element signature="e#4037#4038#0" expanded="true" />
-            <element signature="e#4076#4077#0" expanded="true" />
-            <element signature="e#4105#4106#0" expanded="true" />
-            <element signature="e#4155#4156#0" expanded="true" />
-            <element signature="e#4191#4192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Gender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1040#1041#0" expanded="true" />
+            <element signature="e#1074#1075#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/MovieDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="91" column="7" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1470#1471#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1610#1611#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1811#1812#0" expanded="true" />
+            <element signature="e#1849#1850#0" expanded="true" />
+            <element signature="e#1921#1922#0" expanded="true" />
+            <element signature="e#1975#1976#0" expanded="true" />
+            <element signature="e#2157#2158#0" expanded="true" />
+            <element signature="e#2189#2190#0" expanded="true" />
+            <element signature="e#2239#2240#0" expanded="true" />
+            <element signature="e#2281#2282#0" expanded="true" />
+            <element signature="e#2316#2317#0" expanded="true" />
+            <element signature="e#2347#2348#0" expanded="true" />
+            <element signature="e#2395#2396#0" expanded="true" />
+            <element signature="e#2435#2436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MoviePerrsonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="187">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CreditsDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+            <element signature="e#202#203#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#309#310#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Models/DTOs/CastCreditsDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#140#141#0" expanded="true" />
+            <element signature="e#165#166#0" expanded="true" />
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#227#228#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/utils/MovieFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="146" column="33" selection-start-line="146" selection-start-column="33" selection-end-line="146" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1072#1080#0" expanded="true" />
+            <element signature="method#addGenres#0;class#MovieFactory#0" />
+            <element signature="e#7038#7039#0" expanded="true" />
+            <element signature="e#7067#7068#0" expanded="true" />
+            <element signature="e#7116#7117#0" expanded="true" />
+            <element signature="e#7152#7153#0" expanded="true" />
+            <element signature="e#7191#7192#0" expanded="true" />
+            <element signature="e#7220#7221#0" expanded="true" />
+            <element signature="e#7270#7271#0" expanded="true" />
+            <element signature="e#7306#7307#0" expanded="true" />
+            <element signature="e#7359#7360#0" expanded="true" />
+            <element signature="e#7397#7398#0" expanded="true" />
+            <element signature="e#7470#7471#0" expanded="true" />
+            <element signature="e#7524#7525#0" expanded="true" />
+            <element signature="e#7563#7564#0" expanded="true" />
+            <element signature="e#7592#7593#0" expanded="true" />
+            <element signature="e#7642#7643#0" expanded="true" />
+            <element signature="e#7678#7679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/MovieController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/moviedb/MovieDB/Controllers/PersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

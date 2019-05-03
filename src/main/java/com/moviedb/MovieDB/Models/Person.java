@@ -1,6 +1,7 @@
 package com.moviedb.MovieDB.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -8,25 +9,32 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tb_person")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "person_cl_name", nullable = false)
     private String name;
 
     @Column(name = "person_cl_origin")
-    private String origin;
+    private String place_of_birth;
+
+    @Column(name = "person_cl_birthday")
+    private String birthday;
+
+    @Column(name = "person_cl_biography", length = 1000)
+    private String biography;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "people", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "cast", fetch = FetchType.LAZY)
     private Set<MoviePerson> moviePersonList ;
 
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    /*@ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "gender_id")
-    private Gender gender;
+    private Gender gender;*/
 
     @Override
     public boolean equals(Object o) {
@@ -59,12 +67,12 @@ public class Person {
         this.name = name;
     }
 
-    public String getOrigin() {
-        return origin;
+    public String getPlace_of_birth() {
+        return place_of_birth;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public void setPlace_of_birth(String place_of_birth) {
+        this.place_of_birth = place_of_birth;
     }
 
     public Set<MoviePerson> getMoviePersonList() {
@@ -75,11 +83,27 @@ public class Person {
         this.moviePersonList = moviePersonList;
     }
 
-    public Gender getGender() {
+    /*public Gender getGender() {
         return gender;
     }
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }*/
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography) {
+        this.biography = biography;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }

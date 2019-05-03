@@ -14,6 +14,7 @@ public class Movie {
 
     @Id
     //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "movie_id")
     private Long id;
 
     @Column(name = "movie_cl_title", nullable = false)

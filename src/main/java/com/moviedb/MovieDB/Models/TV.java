@@ -24,10 +24,10 @@ public class TV {
     private int language;
 
     @Column(name = "tv_cl_date")
-    private String date;
+    private String first_air_date;
 
     @Column(name = "tv_cl_seasons")
-    private int seasons;
+    private int number_of_seasons;
 
     @ManyToMany(fetch = FetchType.LAZY,  cascade =
             {CascadeType.PERSIST, CascadeType.MERGE
@@ -92,20 +92,20 @@ public class TV {
         this.language = language;
     }
 
-    public String getDate() {
-        return date;
+    public String getFirst_air_date() {
+        return first_air_date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setFirst_air_date(String first_air_date) {
+        this.first_air_date = first_air_date;
     }
 
-    public int getSeasons() {
-        return seasons;
+    public int getNumber_of_seasons() {
+        return number_of_seasons;
     }
 
-    public void setSeasons(int seasons) {
-        this.seasons = seasons;
+    public void setNumber_of_seasons(int number_of_seasons) {
+        this.number_of_seasons = number_of_seasons;
     }
 
     public Set<Genres> getGenres() {

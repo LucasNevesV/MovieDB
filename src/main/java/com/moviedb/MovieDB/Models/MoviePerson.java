@@ -1,22 +1,23 @@
 package com.moviedb.MovieDB.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "tb_movie_person")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MoviePerson {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "movie")
+    @PrimaryKeyJoinColumn(name = "movie_id")
     private Movie movie;
 
-    @JoinColumn(name = "tb_role")
-    private String role;
 
     @ManyToMany(fetch = FetchType.LAZY,  cascade =
             {CascadeType.PERSIST, CascadeType.MERGE
@@ -24,7 +25,7 @@ public class MoviePerson {
     @JoinTable(name="movie_has_people", joinColumns=
             {@JoinColumn(name="movie_id")}, inverseJoinColumns=
             {@JoinColumn(name="people_id")})
-    private Set<Person> people;
+    private Set<Person> cast;
 
 
     @Override
@@ -58,11 +59,11 @@ public class MoviePerson {
         this.movie = movie;
     }
 
-    public Set<Person> getPeople() {
-        return people;
+    public Set<Person> getCast() {
+        return cast;
     }
 
-    public void setPeople(Set<Person> people) {
-        this.people = people;
+    public void setCast(Set<Person> cast) {
+        this.cast = cast;
     }
 }

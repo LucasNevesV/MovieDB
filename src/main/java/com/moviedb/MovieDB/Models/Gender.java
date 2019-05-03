@@ -1,26 +1,28 @@
 package com.moviedb.MovieDB.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "tb_gender")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Gender {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "gender_cl_gender")
     private String gender;
 
-    @JsonIgnore
+    /*@JsonIgnore
     @OneToMany(
             mappedBy = "gender",
             cascade = {CascadeType.MERGE,CascadeType.PERSIST}
     )
-    private Set<Person> people;
+    private Set<Person> people;*/
 
     @Override
     public boolean equals(Object o) {
@@ -53,11 +55,11 @@ public class Gender {
         this.gender = gender;
     }
 
-    public Set<Person> getPeople() {
+    /*public Set<Person> getPeople() {
         return people;
     }
 
     public void setPeople(Set<Person> people) {
         this.people = people;
-    }
+    }*/
 }
