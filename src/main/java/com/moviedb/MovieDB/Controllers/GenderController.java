@@ -18,7 +18,7 @@ public class GenderController {
     @Autowired
     private GenderRepository genderRepository;
 
-    @RequestMapping(value = "/movies",method = RequestMethod.GET)
+    @RequestMapping(value = "/genders",method = RequestMethod.GET)
     public ResponseEntity<?> getAll(){
         List<Gender> genders = genderRepository.findAll();
         return new ResponseEntity<>(genders, HttpStatus.OK);
@@ -26,7 +26,7 @@ public class GenderController {
 
     @Transactional(rollbackFor = Exception.class)
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> createMovie(@Valid @RequestBody Gender gender){
+    public ResponseEntity<?> createGender(@Valid @RequestBody Gender gender){
         this.genderRepository.save(gender);
         return new ResponseEntity<>(gender,HttpStatus.CREATED);
     }
