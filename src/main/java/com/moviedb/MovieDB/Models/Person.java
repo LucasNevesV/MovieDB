@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Set;
 
 
@@ -25,12 +27,13 @@ public class Person {
     @Column(name = "person_cl_birthday")
     private String birthday;
 
-    @Column(name = "person_cl_biography", length = 1000)
+    @Size(max = 100000)
+    @Column(name = "person_cl_biography")
     private String biography;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "cast", fetch = FetchType.LAZY)
-    private Set<MoviePerson> moviePersonList ;
+    @ManyToMany(mappedBy = "cast", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH})
+    private List<MoviePerson> moviePersonList ;
 
     /*@ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "gender_id")
@@ -75,11 +78,11 @@ public class Person {
         this.place_of_birth = place_of_birth;
     }
 
-    public Set<MoviePerson> getMoviePersonList() {
+    public List<MoviePerson> getMoviePersonList() {
         return moviePersonList;
     }
 
-    public void setMoviePersonList(Set<MoviePerson> moviePersonList) {
+    public void setMoviePersonList(List<MoviePerson> moviePersonList) {
         this.moviePersonList = moviePersonList;
     }
 

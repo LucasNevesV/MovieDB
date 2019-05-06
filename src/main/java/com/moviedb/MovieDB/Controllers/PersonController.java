@@ -1,6 +1,8 @@
 package com.moviedb.MovieDB.Controllers;
 
+import com.moviedb.MovieDB.Models.Movie;
 import com.moviedb.MovieDB.Models.Person;
+import com.moviedb.MovieDB.Repositories.MovieRepository;
 import com.moviedb.MovieDB.Repositories.PersonRepository;
 import com.moviedb.MovieDB.utils.MovieFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +24,12 @@ public class PersonController {
     @Autowired
     private PersonRepository personRepository;
 
+    @Autowired
+    private MovieRepository movieRepository;
     private MovieFactory movieFactory = new MovieFactory();
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> getAll(Pageable pageable){
-        for (Person person: movieFactory.getPeople()) {
-            this.personRepository.save(person);
-            System.out.println("FOi");
-        }
         Page<Person> people= personRepository.findAll(pageable);
         return new ResponseEntity<>(people, HttpStatus.OK);
     }

@@ -33,9 +33,9 @@ public class Genres {
     @ManyToMany(fetch = FetchType.LAZY,  cascade =
             {CascadeType.PERSIST, CascadeType.DETACH,CascadeType.REMOVE,CascadeType.REFRESH
             })
-    @JoinTable(name="genres_has_movies", joinColumns=
+    @JoinTable(name="genres_has_tv", joinColumns=
             {@JoinColumn(name="genres_id")}, inverseJoinColumns=
-            {@JoinColumn(name="movies_id")})
+            {@JoinColumn(name="tv_id")})
     private Set<TV> tvSet;
 
     public Long getId() {

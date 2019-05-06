@@ -3,12 +3,9 @@ package com.moviedb.MovieDB.utils;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.moviedb.MovieDB.Models.*;
 import com.moviedb.MovieDB.Models.DTOs.CastCreditsDTO;
 import com.moviedb.MovieDB.Models.DTOs.CreditsDTO;
-import com.moviedb.MovieDB.Models.Genres;
-import com.moviedb.MovieDB.Models.Movie;
-import com.moviedb.MovieDB.Models.MoviePerson;
-import com.moviedb.MovieDB.Models.Person;
 import com.moviedb.MovieDB.Repositories.GenderRepository;
 import com.moviedb.MovieDB.Repositories.MoviePersonRepository;
 import com.moviedb.MovieDB.Repositories.PersonRepository;
@@ -20,14 +17,17 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class MovieFactory {
+
     private List<Movie> movies;
     private List<Genres> genres;
     private List<Person> people = new ArrayList<Person>();
     private List<MoviePerson> moviePersonList = new ArrayList<>();
     private List<String> movieCode;
+    private List<TV> tvList = new ArrayList<TV>();
     MoviePersonRepository moviePersonRepository;
     ObjectMapper objectMapper = new ObjectMapper();
     String apiKey = "17a74e8e1f3f8e57a29cbabd5eac4789";
@@ -53,16 +53,7 @@ public class MovieFactory {
             popularMap = objectMapper.readValue(getPopular,PopularMap.class);
             TimeUnit.MILLISECONDS.sleep(100);
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }catch (JsonMappingException e) {
-        e.printStackTrace();
-    } catch (JsonGenerationException e) {
-        e.printStackTrace();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-        catch (InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         for (PopularMovieMap movieMap: popularMap.getResults()) {
@@ -71,18 +62,10 @@ public class MovieFactory {
                 URL getDetais = new URL("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey + "&language=en-US");
                 Movie movie = objectMapper.readValue(getDetais,Movie.class);
                 movies.add(movie);
-                addPeople(movie);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }catch (JsonMappingException e) {
-                e.printStackTrace();
-            } catch (JsonGenerationException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
 
     }
 
@@ -136,43 +119,102 @@ public class MovieFactory {
         }
     };
 
-    public void addPeople(Movie movie){
+    public Person addPeople(Movie movie){
         PopularMap popularMap = new PopularMap();
+        Person person = new Person();
         int count = 0;
         try {
             URL getMP= new URL("https://api.themoviedb.org/3/movie/" + movie.getId() + "/credits"+ "?api_key=" + apiKey + "&language=en-US");
             CreditsDTO creditsDTO = objectMapper.readValue(getMP, CreditsDTO.class);
             CastCreditsDTO castCredits;
             List<CastCreditsDTO> list = creditsDTO.getCast();
-            for (int i = 0; i < 3;i++){
+            MoviePerson mp = new MoviePerson();
+            mp.setId(movie.getId());
+            for (int i = 0; i < 5;i++){
                 castCredits = list.get(i);
                 try {
                     URL getPerson= new URL("https://api.themoviedb.org/3/person/" + castCredits.getId() + "?api_key=" + apiKey + "&language=en-US");
-                    Person person = objectMapper.readValue(getPerson,Person.class);
-                    people.add(person);
-                    TimeUnit.MILLISECONDS.sleep(150);
+                    person = objectMapper.readValue(getPerson,Person.class);
+                    //people.add(person);
+                    System.out.println(person.getName());
+                    TimeUnit.MILLISECONDS.sleep(250);
                     System.out.println("Ainda indo....");
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }catch (JsonMappingException e) {
-                    e.printStackTrace();
-                } catch (JsonGenerationException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
+                    List<MoviePerson> mpset = new ArrayList<>();
+                    List<Person> peros = new ArrayList<>();
+                    peros.add(person);
+                    mp.setCast(peros);
+                    if (person.getMoviePersonList() == null){
+
+                    mpset.add(mp);
+                    }else {
+
+                    person.getMoviePersonList().add(mp);
+                    }
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
             System.out.println("Corte");
-        } catch (MalformedURLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }catch (JsonMappingException e) {
+        }
+        return person;
+    }
+
+    public MoviePerson addMoviePerson(Movie movie){
+        PopularMap popularMap = new PopularMap();
+        MoviePerson mp = new MoviePerson();
+        Person person = new Person();
+        List<Person> cast = new ArrayList<Person>();
+        mp.setId(movie.getId());
+        int count = 0;
+        try {
+            URL getMP= new URL("https://api.themoviedb.org/3/movie/" + movie.getId() + "/credits"+ "?api_key=" + apiKey + "&language=en-US");
+            CreditsDTO creditsDTO = objectMapper.readValue(getMP, CreditsDTO.class);
+            CastCreditsDTO castCredits;
+            List<CastCreditsDTO> list = creditsDTO.getCast();
+            for (int i = 0; i < 5;i++){
+                castCredits = list.get(i);
+                try {
+                    URL getPerson= new URL("https://api.themoviedb.org/3/person/" + castCredits.getId() + "?api_key=" + apiKey + "&language=en-US");
+                    person = objectMapper.readValue(getPerson,Person.class);
+                    System.out.println(person.getName());
+                    TimeUnit.MILLISECONDS.sleep(250);
+                    System.out.println("Ainda indo....");
+                    cast.add(person);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            mp.setCast(cast);
+            System.out.println("Corte");
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (JsonGenerationException e) {
+        }
+        return mp;
+    }
+
+    public void addTV(){
+        PopularMap popularMap = new PopularMap();
+        try {
+            URL getPopular = new URL("https://api.themoviedb.org/3/tv/popular?api_key=" + apiKey + "&language=en-US&page=1\n");
+            popularMap = objectMapper.readValue(getPopular,PopularMap.class);
+            TimeUnit.MILLISECONDS.sleep(100);
+
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }catch (InterruptedException e) {
-            e.printStackTrace();
+        }
+        for (PopularMovieMap movieMap: popularMap.getResults()) {
+            movieId = movieMap.getId();
+            try {
+                URL getDetais = new URL("https://api.themoviedb.org/3/tv/" + movieId + "?api_key=" + apiKey + "&language=en-US");
+                TV tv = objectMapper.readValue(getDetais,TV.class);
+                System.out.println(tv.getName());
+                System.out.println(tv.getOverview().length());
+                tvList.add(tv);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -206,5 +248,13 @@ public class MovieFactory {
 
     public void setPeople(List<Person> people) {
         this.people = people;
+    }
+
+    public List<TV> getTvList() {
+        return tvList;
+    }
+
+    public void setTvList(List<TV> tvList) {
+        this.tvList = tvList;
     }
 }

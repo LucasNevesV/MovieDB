@@ -1,8 +1,10 @@
 package com.moviedb.MovieDB.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -14,18 +16,17 @@ public class MoviePerson {
     //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn(name = "movie_id")
     private Movie movie;
 
 
-    @ManyToMany(fetch = FetchType.LAZY,  cascade =
-            {CascadeType.PERSIST, CascadeType.MERGE
-            })
+    @ManyToMany(fetch = FetchType.LAZY,  cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(name="movie_has_people", joinColumns=
             {@JoinColumn(name="movie_id")}, inverseJoinColumns=
             {@JoinColumn(name="people_id")})
-    private Set<Person> cast;
+    private List<Person> cast;
 
 
     @Override
@@ -59,11 +60,11 @@ public class MoviePerson {
         this.movie = movie;
     }
 
-    public Set<Person> getCast() {
+    public List<Person> getCast() {
         return cast;
     }
 
-    public void setCast(Set<Person> cast) {
+    public void setCast(List<Person> cast) {
         this.cast = cast;
     }
 }

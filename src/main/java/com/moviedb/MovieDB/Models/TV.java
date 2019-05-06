@@ -1,10 +1,16 @@
 package com.moviedb.MovieDB.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "tb_tv")
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class TV {
 
     @Id
@@ -12,9 +18,9 @@ public class TV {
     private Long id;
 
     @Column(name = "tv_cl_title", nullable = false)
-    private String title;
+    private String name;
 
-    @Column(name = "tv_cl_overview")
+    @Column(name = "tv_cl_overview",length = 1000)
     private String overview;
 
     @Column(name = "tv_cl_origin")
@@ -29,13 +35,19 @@ public class TV {
     @Column(name = "tv_cl_seasons")
     private int number_of_seasons;
 
-    @ManyToMany(fetch = FetchType.LAZY,  cascade =
-            {CascadeType.PERSIST, CascadeType.MERGE
-            })
-    @JoinTable(name="tv_has_genres", joinColumns=
-            {@JoinColumn(name="tv_id")}, inverseJoinColumns=
-            {@JoinColumn(name="genres_id")})
+    /*@Column(name = "tv_cl_number_of_episodes")
+    private int number_of_episodes;*/
+
+    @ManyToMany(mappedBy = "tvSet", fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE, CascadeType.REFRESH})
     private Set<Genres> genres;
+
+    /*@OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @JoinColumn(name = "season_id")
+    private List<TvSeasons> tvSeasons;*/
 
     @Override
     public boolean equals(Object o) {
@@ -60,12 +72,12 @@ public class TV {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getOverview() {
@@ -115,4 +127,20 @@ public class TV {
     public void setGenres(Set<Genres> genres) {
         this.genres = genres;
     }
+
+   /* public int getNumber_of_episodes() {
+        return number_of_episodes;
+    }
+
+    public void setNumber_of_episodes(int number_of_episodes) {
+        this.number_of_episodes = number_of_episodes;
+    }
+*/
+   /* public List<TvSeasons> getTvSeasons() {
+        return tvSeasons;
+    }
+
+    public void setTvSeasons(List<TvSeasons> tvSeasons) {
+        this.tvSeasons = tvSeasons;
+    }*/
 }
