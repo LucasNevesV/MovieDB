@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/movies")
 public class MovieController {
 
@@ -38,14 +39,17 @@ public class MovieController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getMovieById(@PathVariable Long id) {
-        for (Movie movie: this.movieRepository.findAll()) {
+        /*for (Movie movie: this.movieRepository.findAll()) {
             if (movie.getId().equals(id)) {
                 return  new ResponseEntity<>(movie, HttpStatus.OK);
 
             }
 
-        }
-        return new ResponseEntity<>("There is no artist with this Id!", HttpStatus.NOT_FOUND);
+        }*/
+        Movie movie;
+        movie = this.movieRepository.findById(id).get();
+        return new ResponseEntity<>(movie, HttpStatus.OK);
+        //return new ResponseEntity<>("There is no artist with this Id!", HttpStatus.NOT_FOUND);
 
     }
     @Transactional(rollbackFor = Exception.class)

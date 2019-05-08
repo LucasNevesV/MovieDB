@@ -20,7 +20,7 @@ public class TV {
     @Column(name = "tv_cl_title", nullable = false)
     private String name;
 
-    @Column(name = "tv_cl_overview",length = 1000)
+    @Column(name = "tv_cl_overview",length = 1500)
     private String overview;
 
     @Column(name = "tv_cl_origin")
@@ -35,19 +35,19 @@ public class TV {
     @Column(name = "tv_cl_seasons")
     private int number_of_seasons;
 
-    /*@Column(name = "tv_cl_number_of_episodes")
-    private int number_of_episodes;*/
+    @Column(name = "tv_cl_number_of_episodes")
+    private int number_of_episodes;
 
     @ManyToMany(mappedBy = "tvSet", fetch = FetchType.LAZY,
             cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE, CascadeType.REFRESH})
     private Set<Genres> genres;
 
-    /*@OneToMany(
+    @OneToMany(
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
     @JoinColumn(name = "season_id")
-    private List<TvSeasons> tvSeasons;*/
+    private List<TvSeasons> tvSeasons;
 
     @Override
     public boolean equals(Object o) {
@@ -128,19 +128,19 @@ public class TV {
         this.genres = genres;
     }
 
-   /* public int getNumber_of_episodes() {
+   public int getNumber_of_episodes() {
         return number_of_episodes;
     }
 
     public void setNumber_of_episodes(int number_of_episodes) {
         this.number_of_episodes = number_of_episodes;
     }
-*/
-   /* public List<TvSeasons> getTvSeasons() {
+
+   public List<TvSeasons> getTvSeasons() {
         return tvSeasons;
     }
 
     public void setTvSeasons(List<TvSeasons> tvSeasons) {
         this.tvSeasons = tvSeasons;
-    }*/
+    }
 }

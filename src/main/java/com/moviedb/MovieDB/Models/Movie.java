@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 // @Data LOMBOCK
@@ -26,11 +27,20 @@ public class Movie {
     @Column(name = "movie_cl_origin")
     private String origin;
 
+    @Column(name = "movie_cl_release_date")
+    private Date release_date;
+
     @Column(name = "movie_cl_runtime")
     private int runtime;
 
     @Column(name = "movie_cl_original_language")
     private String original_language;
+
+    @Column(name = "movie_cl_backdrop_path")
+    private String backdrop_path;
+
+    @Column(name = "movie_cl_poster_path")
+    private String poster_path;
 
     //Lazy collection
     @JsonIgnore
@@ -118,6 +128,30 @@ public class Movie {
 
     public void setOriginal_language(String original_language) {
         this.original_language = original_language;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
+    }
+
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
+    }
+
+    public Date getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(Date release_date) {
+        this.release_date = release_date;
     }
 
     //Lingua

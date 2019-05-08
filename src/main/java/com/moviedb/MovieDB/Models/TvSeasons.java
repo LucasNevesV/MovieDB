@@ -20,7 +20,7 @@ public class TvSeasons {
     @Column(name = "tv_seasons_CL_episode_number")
     private int episode_number;
 
-    @Column(name = "tv_seasons_CL_overview")
+    @Column(name = "tv_seasons_CL_overview",length = 1500)
     private String overview;
 
     @OneToMany(

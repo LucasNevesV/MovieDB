@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 @org.springframework.stereotype.Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
 
+    Movie getOne(Long var1);
+
     Page<Movie> findAll(Pageable pageable);
     <S extends Movie> S save(S entity);
 }

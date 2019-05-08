@@ -31,6 +31,9 @@ public class Person {
     @Column(name = "person_cl_biography")
     private String biography;
 
+    @Column(name = "person_cl_profile_path")
+    private String profile_path;
+
     @JsonIgnore
     @ManyToMany(mappedBy = "cast", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH})
     private List<MoviePerson> moviePersonList ;
@@ -108,5 +111,13 @@ public class Person {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public String getProfile_path() {
+        return profile_path;
+    }
+
+    public void setProfile_path(String profile_path) {
+        this.profile_path = profile_path;
     }
 }
