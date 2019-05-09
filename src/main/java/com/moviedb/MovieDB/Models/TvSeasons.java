@@ -12,15 +12,22 @@ import java.util.List;
 public class TvSeasons {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "tv_seasons_CL_name")
+    private String name;
 
     @Column(name = "tv_seasons_CL_air_date")
     private String air_date;
 
     @Column(name = "tv_seasons_CL_episode_number")
-    private int episode_number;
+    private int episode_count;
 
-    @Column(name = "tv_seasons_CL_overview",length = 1500)
+    @Column(name = "tv_seasons_CL_poster_path")
+    private String poster_path;
+
+    @Column(name = "tv_seasons_CL_overview",length = 2000)
     private String overview;
 
     @OneToMany(
@@ -29,6 +36,7 @@ public class TvSeasons {
     )
     @JoinColumn(name = "episode_id")
     private List<TvEpisode> tvEpisode;
+
 
     @Override
     public boolean equals(Object o) {
@@ -61,12 +69,12 @@ public class TvSeasons {
         this.air_date = air_date;
     }
 
-    public int getEpisode_number() {
-        return episode_number;
+    public int getEpisode_count() {
+        return episode_count;
     }
 
-    public void setEpisode_number(int episode_number) {
-        this.episode_number = episode_number;
+    public void setEpisode_count(int episode_count) {
+        this.episode_count = episode_count;
     }
 
     public String getOverview() {
@@ -75,5 +83,21 @@ public class TvSeasons {
 
     public void setOverview(String overview) {
         this.overview = overview;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 }

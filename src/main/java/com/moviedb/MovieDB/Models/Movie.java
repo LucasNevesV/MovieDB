@@ -47,8 +47,12 @@ public class Movie {
     @OneToOne()
     private MoviePerson moviePerson;
 
-    @ManyToMany(mappedBy = "movies", fetch = FetchType.LAZY,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE, CascadeType.REFRESH})
+    @ManyToMany(fetch = FetchType.LAZY,  cascade =
+            {CascadeType.PERSIST, CascadeType.MERGE
+            })
+    @JoinTable(name="movies_has_genres", joinColumns=
+            {@JoinColumn(name="movies_id")}, inverseJoinColumns=
+            {@JoinColumn(name="genres_id")})
     private Set<Genres> genres;
 
     @Override

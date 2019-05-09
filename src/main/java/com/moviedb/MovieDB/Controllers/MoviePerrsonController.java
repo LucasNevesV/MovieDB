@@ -4,8 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.moviedb.MovieDB.Models.Movie;
 import com.moviedb.MovieDB.Models.MoviePerson;
+import com.moviedb.MovieDB.Models.TV;
 import com.moviedb.MovieDB.Repositories.MoviePersonRepository;
 import com.moviedb.MovieDB.Repositories.MovieRepository;
+import com.moviedb.MovieDB.Repositories.TvRepository;
 import com.moviedb.MovieDB.utils.MovieFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,6 +23,7 @@ import javax.validation.Valid;
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id")
 @RestController
+@CrossOrigin
 @RequestMapping("/movieperson")
 public class MoviePerrsonController {
 
@@ -30,14 +33,24 @@ public class MoviePerrsonController {
     @Autowired
     private MovieRepository movieRepository;
 
+    @Autowired
+    private TvRepository tvRepository;
+
     private MovieFactory movieFactory = new MovieFactory();
 
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<?> getAll(Pageable pageable){
+        int count = 0;
         for (Movie movie: movieRepository.findAll()) {
             this.moviePersonRepository.save(movieFactory.addMoviePerson(movie));
-            System.out.println("FOi");
+            count++;
+            System.out.println(count);
+        }
+        for (TV tv: tvRepository.findAll()) {
+            this.moviePersonRepository.save(movieFactory.addMoviePersonTV(tv));
+            count++;
+            System.out.println(count);
         }
         Page<MoviePerson> moviePeople = moviePersonRepository.findAll(pageable);
         return new ResponseEntity<>(moviePeople, HttpStatus.OK);

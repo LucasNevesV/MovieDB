@@ -21,21 +21,13 @@ public class Genres {
     private String name;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY,  cascade =
-            {CascadeType.PERSIST, CascadeType.MERGE
-            })
-    @JoinTable(name="genres_has_movies", joinColumns=
-            {@JoinColumn(name="genres_id")}, inverseJoinColumns=
-            {@JoinColumn(name="movies_id")})
+    @ManyToMany(mappedBy = "genres", fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE, CascadeType.REFRESH})
     private Set<Movie> movies;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY,  cascade =
-            {CascadeType.PERSIST, CascadeType.DETACH,CascadeType.REMOVE,CascadeType.REFRESH
-            })
-    @JoinTable(name="genres_has_tv", joinColumns=
-            {@JoinColumn(name="genres_id")}, inverseJoinColumns=
-            {@JoinColumn(name="tv_id")})
+    @ManyToMany(mappedBy = "genres", fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE, CascadeType.REFRESH})
     private Set<TV> tvSet;
 
     public Long getId() {

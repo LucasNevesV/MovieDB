@@ -3,7 +3,6 @@ package com.moviedb.MovieDB.Models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.Set;
 
@@ -38,8 +37,19 @@ public class TV {
     @Column(name = "tv_cl_number_of_episodes")
     private int number_of_episodes;
 
-    @ManyToMany(mappedBy = "tvSet", fetch = FetchType.LAZY,
-            cascade = {CascadeType.PERSIST, CascadeType.MERGE,CascadeType.REMOVE, CascadeType.REFRESH})
+    @Column(name = "tv_cl_backdrop_path")
+    private String backdrop_path;
+
+    @Column(name = "tv_cl_poster_path")
+    private String poster_path;
+
+
+    @ManyToMany(fetch = FetchType.LAZY,  cascade =
+            {CascadeType.PERSIST, CascadeType.MERGE
+            })
+    @JoinTable(name="tv_has_genres", joinColumns=
+            {@JoinColumn(name="tv_id")}, inverseJoinColumns=
+            {@JoinColumn(name="genres_id")})
     private Set<Genres> genres;
 
     @OneToMany(
@@ -47,7 +57,7 @@ public class TV {
             orphanRemoval = true
     )
     @JoinColumn(name = "season_id")
-    private List<TvSeasons> tvSeasons;
+    private List<TvSeasons> seasons;
 
     @Override
     public boolean equals(Object o) {
@@ -136,11 +146,27 @@ public class TV {
         this.number_of_episodes = number_of_episodes;
     }
 
-   public List<TvSeasons> getTvSeasons() {
-        return tvSeasons;
+   public List<TvSeasons> getSeasons() {
+        return seasons;
     }
 
-    public void setTvSeasons(List<TvSeasons> tvSeasons) {
-        this.tvSeasons = tvSeasons;
+    public void setSeasons(List<TvSeasons> seasons) {
+        this.seasons = seasons;
+    }
+
+    public String getBackdrop_path() {
+        return backdrop_path;
+    }
+
+    public void setBackdrop_path(String backdrop_path) {
+        this.backdrop_path = backdrop_path;
+    }
+
+    public String getPoster_path() {
+        return poster_path;
+    }
+
+    public void setPoster_path(String poster_path) {
+        this.poster_path = poster_path;
     }
 }

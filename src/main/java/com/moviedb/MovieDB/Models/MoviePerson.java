@@ -2,6 +2,7 @@ package com.moviedb.MovieDB.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,6 +23,7 @@ public class MoviePerson {
     private Movie movie;
 
 
+    //@JsonManagedReference
     @ManyToMany(fetch = FetchType.LAZY,  cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(name="movie_has_people", joinColumns=
             {@JoinColumn(name="movie_id")}, inverseJoinColumns=
