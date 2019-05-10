@@ -27,15 +27,8 @@ public class TvSeasons {
     @Column(name = "tv_seasons_CL_poster_path")
     private String poster_path;
 
-    @Column(name = "tv_seasons_CL_overview",length = 2000)
+    @Column(name = "tv_seasons_CL_overview",length = 3000)
     private String overview;
-
-    @OneToMany(
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    @JoinColumn(name = "episode_id")
-    private List<TvEpisode> tvEpisode;
 
 
     @Override

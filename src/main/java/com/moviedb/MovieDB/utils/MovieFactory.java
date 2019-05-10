@@ -47,12 +47,11 @@ public class MovieFactory {
     }
 
     public void addMovies(){
-            for (int i = 1; i <3;i++){
+            for (int i = 1; i <4;i++){
                 PopularMap popularMap = new PopularMap();
                 try {
                     URL getPopular = new URL("https://api.themoviedb.org/3/movie/popular?api_key=" + apiKey + "&language=en-US&page="+ i +"\n");
                     popularMap = objectMapper.readValue(getPopular,PopularMap.class);
-                    TimeUnit.MILLISECONDS.sleep(150);
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -61,6 +60,7 @@ public class MovieFactory {
                     movieId = movieMap.getId();
                     try {
                         URL getDetais = new URL("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey + "&language=en-US");
+                        TimeUnit.MILLISECONDS.sleep(300);
                         Movie movie = objectMapper.readValue(getDetais,Movie.class);
                         movies.add(movie);
                     } catch (Exception e) {
@@ -230,25 +230,27 @@ public class MovieFactory {
     }
 
     public void addTV(){
-        PopularMap popularMap = new PopularMap();
-        try {
-            URL getPopular = new URL("https://api.themoviedb.org/3/tv/popular?api_key=" + apiKey + "&language=en-US&page=1\n");
-            popularMap = objectMapper.readValue(getPopular,PopularMap.class);
-            TimeUnit.MILLISECONDS.sleep(100);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        for (PopularMovieMap movieMap: popularMap.getResults()) {
-            movieId = movieMap.getId();
+        for (int i = 1; i <4;i++) {
+            PopularMap popularMap = new PopularMap();
             try {
-                URL getDetais = new URL("https://api.themoviedb.org/3/tv/" + movieId + "?api_key=" + apiKey + "&language=en-US");
-                TV tv = objectMapper.readValue(getDetais,TV.class);
-                System.out.println(tv.getName());
-                System.out.println(tv.getOverview().length());
-                tvList.add(tv);
+                URL getPopular = new URL("https://api.themoviedb.org/3/tv/popular?api_key=" + apiKey +  "&language=en-US&page="+ i +"\n");
+                popularMap = objectMapper.readValue(getPopular, PopularMap.class);
+
             } catch (Exception e) {
                 e.printStackTrace();
+            }
+            for (PopularMovieMap movieMap : popularMap.getResults()) {
+                movieId = movieMap.getId();
+                try {
+                    URL getDetais = new URL("https://api.themoviedb.org/3/tv/" + movieId + "?api_key=" + apiKey + "&language=en-US");
+                    TimeUnit.MILLISECONDS.sleep(300);
+                    TV tv = objectMapper.readValue(getDetais, TV.class);
+                    System.out.println(tv.getName());
+                    System.out.println(tv.getOverview().length());
+                    tvList.add(tv);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

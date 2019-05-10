@@ -1,6 +1,7 @@
 package com.moviedb.MovieDB.Controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.moviedb.MovieDB.Filters.PersonSpecification;
 import com.moviedb.MovieDB.Models.DTOs.PersonDTO;
 import com.moviedb.MovieDB.Models.Movie;
 import com.moviedb.MovieDB.Models.MoviePerson;
@@ -40,21 +41,10 @@ public class PersonController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<?> getMovieById(@PathVariable Long id) {
         Person person;
-        PersonDTO personDTO;
-        List<Long> ids = new ArrayList<>();
 
         person = this.personRepository.findById(id).get();
 
-        personDTO = objectMapper.convertValue(person,PersonDTO.class);
-
-        for (MoviePerson moviePerson: person.getMoviePersonList()) {
-            //System.out.println();
-            ids.add(moviePerson.getId());
-        }
-
-        personDTO.setMoviePersonId(ids);
-
-        return new ResponseEntity<>(personDTO, HttpStatus.OK);
+        return new ResponseEntity<>(person, HttpStatus.OK);
         //return new ResponseEntity<>("There is no artist with this Id!", HttpStatus.NOT_FOUND);
 
     }
@@ -64,5 +54,18 @@ public class PersonController {
     public ResponseEntity<?> createPerson(@Valid @RequestBody Person person){
         this.personRepository.save(person);
         return new ResponseEntity<>(person,HttpStatus.CREATED);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    @RequestMapping(path = "/update",method = RequestMethod.PUT)
+    public ResponseEntity<?> updateMovie(@Valid @RequestBody Person person){
+        this.personRepository.save(person);
+        return new ResponseEntity<>(person,HttpStatus.OK);
+    }
+
+    @RequestMapping(path = "/filter/", method = RequestMethod.GET)
+    public ResponseEntity<?> getMovieByFields(Pageable pageable, @RequestParam(required = false)String title){
+        Page<Person> personPagePage = personRepository.findAll(PersonSpecification.searchPerson(title),pageable);
+        return new ResponseEntity<>(personPagePage,HttpStatus.OK);
     }
 }

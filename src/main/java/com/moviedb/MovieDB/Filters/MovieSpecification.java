@@ -1,4 +1,4 @@
-package com.moviedb.MovieDB.utils;
+package com.moviedb.MovieDB.Filters;
 
 import com.moviedb.MovieDB.Models.Movie;
 import org.springframework.data.jpa.domain.Specification;
@@ -14,7 +14,7 @@ public class MovieSpecification {
         return new Specification<Movie>() {
             @Override
             public Predicate toPredicate(Root<Movie> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder cb) {
-                return cb.or(cb.like(root.get("title"),("%" + title.toLowerCase() + "%")));
+                return cb.or(cb.like(cb.upper(root.get("title")),("%" + title.toUpperCase() + "%")));
             }
         };
     }

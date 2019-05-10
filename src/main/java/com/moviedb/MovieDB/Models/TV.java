@@ -26,7 +26,7 @@ public class TV {
     private String origin;
 
     @Column(name = "tv_cl_language")
-    private int language;
+    private String original_language;
 
     @Column(name = "tv_cl_date")
     private String first_air_date;
@@ -106,12 +106,12 @@ public class TV {
         this.origin = origin;
     }
 
-    public int getLanguage() {
-        return language;
+    public String getOriginal_language() {
+        return original_language;
     }
 
-    public void setLanguage(int language) {
-        this.language = language;
+    public void setOriginal_language(String original_language) {
+        this.original_language = original_language;
     }
 
     public String getFirst_air_date() {

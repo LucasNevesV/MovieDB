@@ -5,7 +5,7 @@ import com.moviedb.MovieDB.Models.Movie;
 import com.moviedb.MovieDB.Repositories.MovieRepository;
 
 import com.moviedb.MovieDB.utils.MovieFactory;
-import com.moviedb.MovieDB.utils.MovieSpecification;
+import com.moviedb.MovieDB.Filters.MovieSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

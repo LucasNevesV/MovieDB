@@ -36,12 +36,17 @@ public class Person {
     private String profile_path;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "cast", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REFRESH})
+    @ManyToMany(mappedBy = "cast", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.REFRESH})
     private List<MoviePerson> moviePersonList ;
 
-    /*@ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    /*@ManyToOne(
+            cascade = CascadeType.ALL
+    )
     @JoinColumn(name = "gender_id")
     private Gender gender;*/
+
+    @Column(name = "person_cl_gender")
+    private int gender;
 
     @Override
     public boolean equals(Object o) {
@@ -90,13 +95,13 @@ public class Person {
         this.moviePersonList = moviePersonList;
     }
 
-    /*public Gender getGender() {
+    public int getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(int gender) {
         this.gender = gender;
-    }*/
+    }
 
     public String getBiography() {
         return biography;
